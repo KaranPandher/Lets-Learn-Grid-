@@ -56,3 +56,19 @@ body {
             /* Other links is 50% Copyright info is 50% */
     }
 }
+
+/* Let's try positioning... */ 
+.first-service,
+.second-service,
+.third-service {
+    width: 50%; /* Based on available cell space */
+    height: 50%; 
+    justify-self: center; /* Horizontal position: start, center, end */
+    align-self: center; /* Verticlal position: start, center, end  */
+}
+
+.second-service{
+    width: 75%;
+    height: 75%;
+}
+
