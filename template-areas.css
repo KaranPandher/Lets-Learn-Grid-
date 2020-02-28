@@ -1,0 +1,58 @@
+/* Browser Reset */ 
+*{
+    font-size: 16px; 
+    padding: 0;
+    margin: 0;
+}
+/* Mobile Version First */ 
+/* Always do Mobile Version First */ 
+body {
+    /* 1 x 6 Template for Mobile; 30 width height for each */ 
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 30vh 30vh 30vh 30vh 30vh 30vh;
+}
+
+.hero, .copyright-info {background: red;}
+.first-service{ background: blue;}
+.second-service{background: green;}
+.third-service{background:yellow;}
+.other-links{background: pink;}
+
+/* Tablet */ 
+@media screen and (min-width: 500px) {
+    body{ 
+        grid-template-columns: 50% 50%; /* 2 Columns! */
+        grid-template-rows: 30vh 30vh 30vh 30vh; /* 4 Rows! */ 
+        grid-template-areas: 
+            "hero hero" /* Area is 2 columns; HERO HERO; spans 2 columns*/
+            "first-service second-service" /*Row 2: Each is 1 cell. 1st and 2nd service */
+            "third-service third-service" /* Row 3: 3rd service spans twice*/ 
+            "other-links copyright-info"; /* Row 4: Each is 1 cell . */
+    }
+    /*VERY IMPORTANT: Turn each class into a grid area we called above */ 
+    .hero{ grid-area: hero;}
+    .first-service {grid-area: first-service; }
+    .second-service {grid-area: second-service; }
+    .third-service {grid-area: third-service; }
+    .other-links {grid-area: other-links; }
+    .copyright-info {grid-area: copyright-info;}
+}
+
+/* Desktop Size */ 
+@media screen and (min-width: 1024px) {
+    body {
+        grid-template-columns: 
+            33.333% 16.666% 16.666% 33.333%;
+            /*Width of Each Column as per the outline */
+        grid-template-rows: 35vh 35vh 35vh;
+            /* Use auto, with real content, unless you're sure of a specific size*/
+        grid-template-areas: 
+            "hero hero hero hero"
+            /* First Column is all hero */ 
+            "first-service second-service second-service third-service"
+            /* 1st Service is 33%, Second Service is 33%, Third Service is 33%*/
+            "other-links other-links copyright-info copyright-info";
+            /* Other links is 50% Copyright info is 50% */
+    }
+}
