@@ -67,7 +67,7 @@ body {
     align-self: center; /* Verticlal position: start, center, end  */
 }
 
-.second-service{
+.second-service{ /* Slight bigger, this one will stand out ! */ 
     width: 75%;
     height: 75%;
 }
