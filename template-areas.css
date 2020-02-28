@@ -8,6 +8,7 @@
 /* Always do Mobile Version First */ 
 body {
     /* 1 x 6 Template for Mobile; 30 width height for each */ 
+    /* VERY IMPORTANT MUST HAVE DISPLAY GRID  */
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 30vh 30vh 30vh 30vh 30vh 30vh;
