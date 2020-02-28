@@ -1,0 +1,116 @@
+/* Lets try CSS3 grid! */ 
+/* Check out this great guide: https://css-tricks.com/snippets/css/complete-guide-grid/ */ 
+
+* { /* */ 
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#css-grid {
+    display: grid; 
+    grid-template-columns: 
+        20% /* Column 1 */ 
+        20% /* Column 2 */ 
+        15% /* Column 3 */ 
+        15% /* Column 4 */ 
+        30%; /* Column 5 */ 
+    /*look at sketch  */ 
+    grid-template-rows: 
+        20vh /* Column 1 */ 
+        20vh /* Column 2 */ 
+        25vh /* Column 3 */ 
+        25vh /* Column 4 */ 
+        10vh; /* Column 5 */ 
+}
+
+/* Border so we can see our rows / columns . */ 
+
+#css-grid > * {
+    border: 2px dashed darkgray; 
+}
+
+#navigation {
+    grid-column-start: 2;
+    /* where navigation starts for column */
+    grid-column-end: span 3; 
+    /* where navigation ends for column; span tells it to EXPAND
+    how many cells to take up */ 
+    grid-row-start: 1; /*where navi starts for row */ 
+    grid-row-end: 1;  /* where navi ends for row */ 
+}
+
+#sidebar {
+    grid-column-start: 1; 
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: span 3; /*SPAN is how many cells to TAKE up */ 
+}
+
+#hero { 
+    grid-column: 2 / span 4; /* Starts at 2 Ends SPAN 4 */
+    grid-row: 2; /* Starts and ENDS at 2 */ 
+}
+#content-1,
+#content-2,
+#contnet-3 {
+    grid-row: 3; 
+} /* Compile these together same row */ 
+
+#content-1 {
+    grid-column: 2;
+}
+
+#content-2 {
+    grid-column: 3 / span 2; 
+}
+
+#content-3 { 
+    grid-column: 5;
+}
+
+#big-content-1,
+#big-content-2 {
+    grid-row: 4; 
+
+}
+
+#big-content-1 {
+    grid-column: 2; 
+    grid-column: span 2; 
+}
+
+#big-content-2 {
+    grid-column: 4;
+    grid-column: span 2; 
+}
+
+#copyright,
+#info,
+#links,
+#address {
+    grid-row: 5;
+}
+
+#links {
+    grid-column: 3 / span 2;
+}
+
+/* Visuals (Ignore) */ 
+
+*{font-family:Arial,Helvetica,sans-serif;list-style:none;}
+#css-grid>*{color:#fff;padding:5%;}
+#logo,#info{background:lightsalmon;}
+#navigation,
+#links{color:darkgray;background:khaki;}
+#search,
+#address{background:palegreen;}
+#sidebar{background:cornflowerblue;}
+#content-1{background:plum;}
+#content-2{color:darkgray;background:antiquewhite;}
+#content-3{background:peru;}
+#big-content-1{background:silver;}
+#big-content-2{background:#5d8aa8;}
+#copyright,
+#hero{background:#a4c639;}
